@@ -1,53 +1,103 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src='https://meet.jit.si/external_api.js'></script>
-    <link rel="stylesheet" href="style.css">
-    <title>Online Meeting</title>
-</head>
-<body>
-    <section class="showcase">
-        <header>
-          <h2 class="logo">WEB MEET</h2>
-          <div class="toggle"></div>
-        </header>
-        <video src="video.mp4" muted loop autoplay></video>
-        <div class="overlay"></div>
-        <div class="text">
-          <h2>Web meet bring</h2> 
-          <h3>The Onlie new World</h3>
-          <p>We created free service that is for new online virtual World. WEB MEET is free for all.</p>
-          <a href="online_meet.html">Start meeting</a>
-          <a href="online_meet.html">Join meeting</a>
+print("***** Dinner Set *****")
+a=int(input("\nEnter First Dish No. : "))
+l=[a]
+def push(l,item):
+    l.append(item)
+def pop(d):
+    if l==[]:
+        print("No Dishes .....")
+    else:
+        i=l.pop()
+        print("Dish : ",i," taken out")
+def display(l):
+    if l==[]:
+        print("No Dishes .....")
+    else:
+        t=len(l)-1
+        print("Dish : ",l[t])
+        for a in range(t-1,-1,-1):
+            print("Dish : ",l[a])
 
-          
-          
-        </div>
-        <ul class="social">
-          <li><a href="#"><img src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
-          <li><a href="#"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a></li>
-          <li><a href="#"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
-        </ul>
-        <script>
-             const menuToggle = document.querySelector('.toggle');
-      const showcase = document.querySelector('.showcase');
+print("\n1. Add Dish")
+print("2. Take Out Dish")
+print("3. Show Dishes")
+print("4. No Work To Do")
 
-      menuToggle.addEventListener('click', () => {
-        menuToggle.classList.toggle('active');
-        showcase.classList.toggle('active');
-      })
-        </script>
-      </section>
-      
+while True:
+    x=int(input("\nEnter task no. : "))
+    if x==1:
+        item=int(input("Enter Dish No. : "))
+        push(l,item)
+    elif x==2:
+        pop(l)
+    elif x==3:
+        display(l)
+    elif x==4:
+        print("Ok ! Bye")
+        break
+    else:
+        print("Try Again !!!")
+            
 
-        
-      
-      
-     
 
-    
-</body>
-</html>
+
+
+
+
+
+def empty(stk):
+    if stk==[]:
+        return True
+    else:
+        return False
+
+def push(stk,i):
+    stk.append(i)
+    t=len(stk)-1
+
+def pop(stk):
+    if empty(stk):
+        return "Stack Empty"
+    else:
+        i=stk.pop()
+        if len(stk)==0:
+            t=None
+        else:
+            t=len(stk)-1
+        return i
+
+def display(stk):
+    if empty(stk):
+        print("Stack Empty")
+    else:
+        t=len(stk)-1
+        print("[",stk[t],"]")
+        for i in range(t-1,-1,-1):
+            print("[",stk[i],"]")
+                  
+stack=[]
+print("\n***** STACK OPERATIONS *****")
+print("1. PUSH")
+print("2. POP")
+print("3. DISPLAY")
+print("4. EXIT")
+while True:
+    x=int(input("\nEnter your choice : "))
+    if x==1:
+        item=int(input("Enter item : "))
+        push(stack,item)
+    elif x==2:
+        item=pop(stack)
+        if item=="Stack Empty":
+            print("Stack Empty")
+        else:
+            print("Popped item is : [",item,"]")
+    elif x==3:
+        display(stack)
+    elif x==4:
+        print("Thank You .............")
+        break
+    else:
+        print("Wrong Input")
+
+
